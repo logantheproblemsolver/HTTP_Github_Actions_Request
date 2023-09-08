@@ -1,0 +1,11 @@
+name: "Hit an api"
+ 
+on: [push]
+ 
+jobs:
+  run-updater:
+    runs-on: ubuntu-latest
+    steps:
+    - name: REST API with curl
+      run: |
+        curl -X POST "https://c3dc-75-104-93-67.ngrok-free.app/command" -H "Content-Type: application/json" -d '{"command": "ls"}'
